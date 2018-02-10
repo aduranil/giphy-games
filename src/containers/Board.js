@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../actions'
-import {Grid, Image, Container, Label, Message} from 'semantic-ui-react'
+import {Grid, Container} from 'semantic-ui-react'
+import TileImage from '../components/TileImage'
 
 let newArr = []
 class Board extends React.Component {
@@ -24,11 +25,11 @@ class Board extends React.Component {
       this.splitBoardIntoRows(this.props.board)
       return newArr.map((array,index)=> {
         return (
-          <Grid.Row columns={4}>
-            {array.map(gif => {
+          <Grid.Row key={index} columns={4}>
+            {array.map((gif,index) => {
               return (
                 <Grid.Column>
-                  <Image src={gif.images.fixed_height.url} />
+                  <TileImage key={index} gif={gif}/>
                 </Grid.Column>
               )
             })}

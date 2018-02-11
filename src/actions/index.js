@@ -14,7 +14,7 @@ export const setBoard = () => dispatch => {
   fetch(`http://api.giphy.com/v1/gifs/search?q=cat&api_key=${API_KEY}`)
     .then(response=> response.json())
     .then(res => {
-      let data  = res.data.slice(0,4)
+      let data  = res.data.slice(0,6)
       data = data.concat(data)
       shuffleGifs(data)
       dispatch({type: 'SET_BOARD', data})
@@ -23,10 +23,8 @@ export const setBoard = () => dispatch => {
 
 export const toggler = (id, url)  => {
   return {type: 'TOGGLE_VISIBILITY', id, url}
-  // dispatch({type: 'CHECK_PAIR'})
 }
 
 export const pairIds = ()  => {
   return {type: 'CHECK_PAIR'}
-  // dispatch({type: 'CHECK_PAIR'})
 }

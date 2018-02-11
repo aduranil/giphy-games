@@ -4,11 +4,11 @@ import './index.css';
 import Board from './containers/Board';
 import 'semantic-ui-css/semantic.min.css';
 import { createStore,applyMiddleware } from 'redux'
-import rootReducer from './reducers'
+import boardReducer from './reducers'
 import reduxThunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
-const store = createStore(rootReducer, applyMiddleware(reduxThunk))
+const store = createStore(boardReducer, applyMiddleware(reduxThunk))
 
 const Root = ({ store }) => {
   return (

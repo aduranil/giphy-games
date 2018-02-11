@@ -1,10 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 
 div.ui.label {
   height: 200px;
   width: 200px;
+}
+
+h1 {
+  font-family: "Lobster", cursive !important;
+}
+
+h4 {
+  font-family: "Roboto", sans-serif !important;
 }

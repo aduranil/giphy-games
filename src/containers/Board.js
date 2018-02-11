@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 import {Grid, Container} from 'semantic-ui-react'
 import TileImage from '../components/TileImage'
-
+import About from '../components/About'
 let newArr = []
 class Board extends React.Component {
 
@@ -21,8 +21,10 @@ class Board extends React.Component {
   }
 
   displayBoard = () => {
-    if (this.props.board.map) {
-      this.splitBoardIntoRows(this.props.board)
+    const props = this.props
+
+    if (props.board.map) {
+      this.splitBoardIntoRows(props.board)
       return newArr.map((array,idx)=> {
         return (
           <Grid.Row key={idx} columns={4}>
@@ -39,9 +41,11 @@ class Board extends React.Component {
     }
   }
   render(){
+    console.log(this.props)
     return (
       <div>
         <Container>
+          <About/>
           <Grid celled columns={4}>
             {this.displayBoard()}
           </Grid>
@@ -53,8 +57,9 @@ class Board extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    board: state.board.board,
-    pairs: state.pairs
+    board: state.board,
+    url: state.url,
+    id: state.id
   }
 }
 

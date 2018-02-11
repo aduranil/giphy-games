@@ -6,22 +6,24 @@ import * as actions from '../actions'
 class TileImage extends React.Component {
 
   changeState = (event) => {
-    this.props.toggler(event.target.id, event.target.attributes[1].nodeValue)
-    setTimeout(this.props.pairIds,3000)
+    const props = this.props
+    props.toggler(event.target.id, event.target.attributes[1].nodeValue)
+    setTimeout(props.pairIds,3000)
   }
 
   render() {
-    console.log(this.props)
+    const props = this.props
     return (
       <div>
-        {this.props.pairs.url.includes(this.props.idName)   ?
+        {props.url.includes(props.idName) ?
           <Image
             onClick={this.changeState}
-            src={this.props.gif.images.fixed_height.url}/>
+            src={props.gif.images.fixed_height.url}/>
           :
           <Label
-            name={this.props.idName}
-            id={this.props.gif.images.fixed_height.url}
+            color='blue'
+            name={props.idName}
+            id={props.gif.images.fixed_height.url}
             onClick={this.changeState}/>
         }
       </div>
@@ -31,8 +33,9 @@ class TileImage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    board: state.board.board,
-    pairs: state.pairs
+    board: state.board,
+    url: state.url,
+    id: state.id
   }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../actions'
-import {Grid, Container} from 'semantic-ui-react'
+import { Grid, Container } from 'semantic-ui-react'
 import TileImage from '../components/TileImage'
 import About from '../components/About'
 let newArr = []
@@ -20,9 +20,9 @@ class Board extends React.Component {
     return newArr
   }
 
+  // maps the board to the page
   displayBoard = () => {
     const props = this.props
-
     if (props.board.map) {
       this.splitBoardIntoRows(props.board)
       return newArr.map((array,idx)=> {
@@ -40,13 +40,13 @@ class Board extends React.Component {
       })
     }
   }
+
   render(){
-    console.log(this.props)
     return (
       <div>
         <Container>
           <About/>
-          <Grid celled columns={4}>
+          <Grid textAlign='center' columns={4}>
             {this.displayBoard()}
           </Grid>
         </Container>

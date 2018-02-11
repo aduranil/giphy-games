@@ -11,7 +11,7 @@ const shuffleGifs = (a) => {
 
 // fetches cat gifs
 export const setBoard = () => dispatch => {
-  fetch(`http://api.giphy.com/v1/gifs/search?q=cat&api_key=${API_KEY}`)
+  fetch(`https://api.giphy.com/v1/gifs/search?q=cat&api_key=${API_KEY}`)
     .then(response=> response.json())
     .then(res => {
       // grabs the first 6 gifs

@@ -4,7 +4,7 @@ This is a take on the game Concentration, also known as [Memory](https://en.wiki
 
 To get a new randomized deck, refresh the page. If two cards are not a match, wait for them to flip back over before clicking on another card.
 
-https://media.giphy.com/media/xThtafAXh9ETC2iX28/giphy.gif
+(https://media.giphy.com/media/xThtafAXh9ETC2iX28/giphy.gif)
 
  ## Installation
   * Clone this repository

@@ -20,3 +20,13 @@ export const setBoard = () => dispatch => {
       dispatch({type: 'SET_BOARD', data})
       })
 }
+
+export const toggler = (id, url)  => {
+  return {type: 'TOGGLE_VISIBILITY', id, url}
+  // dispatch({type: 'CHECK_PAIR'})
+}
+
+export const pairIds = ()  => {
+  return {type: 'CHECK_PAIR'}
+  // dispatch({type: 'CHECK_PAIR'})
+}

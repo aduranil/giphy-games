@@ -23,13 +23,13 @@ class Board extends React.Component {
   displayBoard = () => {
     if (this.props.board.map) {
       this.splitBoardIntoRows(this.props.board)
-      return newArr.map((array,index)=> {
+      return newArr.map((array,idx)=> {
         return (
-          <Grid.Row key={index} columns={4}>
+          <Grid.Row key={idx} columns={4}>
             {array.map((gif,index) => {
               return (
-                <Grid.Column>
-                  <TileImage key={index} gif={gif}/>
+                <Grid.Column key={index}>
+                  <TileImage idName={""+idx+index} gif={gif}/>
                 </Grid.Column>
               )
             })}
@@ -39,7 +39,6 @@ class Board extends React.Component {
     }
   }
   render(){
-    console.log(this.props.board)
     return (
       <div>
         <Container>
@@ -54,7 +53,8 @@ class Board extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    board: state.board
+    board: state.board.board,
+    pairs: state.pairs
   }
 }
 
